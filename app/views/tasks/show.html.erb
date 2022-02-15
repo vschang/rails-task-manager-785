@@ -1,0 +1,18 @@
+<div class="container">
+<h2><%= @task.title %></h2>
+</div>
+<div class="container background-blue">
+<p><em><%= @task.details %></em></p>
+</div>
+<div class="container">
+<p><%= 'Task completed?' %></p>
+<p><%= @task.completed? ? 'Yes' : 'No'%></p>
+</div>
+<div class="container">
+<%= link_to "Edit #{@task.title}", edit_task_path  %>
+<%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :destroy,
+            data: { confirm: "Are you sure?" } %>
+<%= link_to "Back", tasks_path %>
+</div>

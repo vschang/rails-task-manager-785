@@ -1,0 +1,21 @@
+<div class="container">
+<h1>My Tasks:</h1>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @tasks.each do|task| %>
+         <tr>
+         <td><%= link_to task.title, task_path(task) %><td>
+         </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add a task", tasks_new_path %>
+</div>
